@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Amigo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-intro p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .masonry {
+            columns: 2;
+            column-gap: 1.5rem;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+            filter: brightness(0.65);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(10, 36, 99, 0.9));
+            border-radius: 0 0 14px 14px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-overlay span {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.85rem;
+        }
+
+        .gallery-featured {
+            column-span: all;
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            max-height: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-featured img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            border-radius: 16px;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-featured:hover img {
+            transform: scale(1.03);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            z-index: 2;
+        }
+
+        .featured-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(10, 36, 99, 0.9));
+            border-radius: 0 0 16px 16px;
+        }
+
+        .featured-info h3 {
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .featured-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .masonry {
+                columns: 1;
+            }
+
+            .gallery-featured img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">&lt; Amigo /&gt;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="gallery-intro">
+                <h1>Gallery</h1>
+                <p>A visual look into my journey — events, projects, and moments in tech.</p>
+            </div>
+
+            <div class="gallery-featured">
+                <span class="featured-badge">Featured</span>
+                <img src="images/gallery1.jpg" alt="AI Hackathon 2025">
+                <div class="featured-info">
+                    <h3>AI Hackathon 2025</h3>
+                    <p>Collaborating with teammates to build an AI-powered solution under 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="masonry">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop" alt="Robotics Project" style="height: 320px; object-fit: cover;">
+                    <div class="gallery-overlay">
+                        <h4>University Robotics Project</h4>
+                        <span>Hands-on engineering lab work</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Conference" style="height: 240px; object-fit: cover;">
+                    <div class="gallery-overlay">
+                        <h4>Kano Digital Summit</h4>
+                        <span>Networking with industry professionals</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery4.jpg" alt="Dashboard UI" style="height: 280px; object-fit: cover;">
+                    <div class="gallery-overlay">
+                        <h4>Sales Dashboard UI</h4>
+                        <span>Data visualization project</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&auto=format&fit=crop" alt="Code" style="height: 300px; object-fit: cover;">
+                    <div class="gallery-overlay">
+                        <h4>Deep Learning Model</h4>
+                        <span>Python AI model training</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Workspace" style="height: 260px; object-fit: cover;">
+                    <div class="gallery-overlay">
+                        <h4>My Development Setup</h4>
+                        <span>Where the magic happens</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Amigo. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
