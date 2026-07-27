@@ -1,4 +1,4 @@
-/* style.css */
+style.css
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -17,6 +17,13 @@
   --transition: 0.3s ease;
 }
 
+body.dark-mode {
+  --bg-color: #1a1a2e;
+  --bg-secondary: #252542;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b2c3;
+  --primary-color: #4da8da; 
+}
 * {
   margin: 0;
   padding: 0;
